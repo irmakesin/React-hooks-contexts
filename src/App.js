@@ -1,12 +1,9 @@
-import React
- from 'react';
+import React from 'react';
 
 import { StateProvider } from './context/index'
 import reducer, { initialState } from './reducers'
 import WithContext from './components/WithContext';
-import axios from 'axios';
 
-axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com';
 
 function App() {
   return (

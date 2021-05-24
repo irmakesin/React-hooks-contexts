@@ -6,7 +6,7 @@ export const StateContext = createContext();
 export const StateProvider = ({ reducer, initialState, children }) => {
 
   return (
-  <StateContext.Provider value={useReducer(reducer, initialState)}> {/* useReducer returns the state and a dispatch function to update state */}
+  <StateContext.Provider value={useReducer(reducer, initialState)}> {/* returns the state and a dispatch function to update state */}
     {children}
   </StateContext.Provider>
   )
@@ -24,7 +24,7 @@ StateProvider.propTypes = {
   initialState: PropTypes.shape({}).isRequired,
 
   /**
-   * @desc The reducer's state & actions update to context's data. 
+   * @desc 
    * @param {object} state
    * @param {object} action
    */

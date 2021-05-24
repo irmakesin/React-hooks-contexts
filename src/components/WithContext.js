@@ -13,9 +13,12 @@ function WithContext() {
   console.log(postsState)
 const handleClick = () => {
   axios
-        .get("/posts")
+        .get(POSTS_SERVICE_URL)
         .then((response) => {
-            dispatch(setPosts(response.data))
+          dispatch({
+            type:"SET_POSTS",
+            payload:response.data
+          })
            
         })
         .catch((err) => {
@@ -26,9 +29,11 @@ const handleClick = () => {
     <div>
       <Button variant= "contained" onClick={handleClick} >Fetch posts</Button>
       <PostListFrom  />
-      {postsState?.posts.map(post => (
+      {postsState?.posts.map(post => {
+
+  
         <div> {post.title} </div>
-      ))
+      })
       }
     </div>
   );
